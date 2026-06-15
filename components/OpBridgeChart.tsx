@@ -69,7 +69,7 @@ export default function OpBridgeChart() {
             <LabelList
               dataKey="value"
               position="top"
-              formatter={(v: number) => (v === 0 ? "" : `${v > 0 ? "+" : ""}${v.toLocaleString()}`)}
+              formatter={(v: number | string) => (v === 0 ? "" : `${Number(v) > 0 ? "+" : ""}${Number(v).toLocaleString()}`)}
               style={{ fontSize: 10, fontWeight: 600 }}
             />
             {wData.map((entry, index) => (

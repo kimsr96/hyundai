@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --hyundai-blue: #002C5F;
+  --hyundai-blue-mid: #00438F;
+  --positive: #007A33;
+  --negative: #C8102E;
+}
+
+body {
+  background-color: #F4F5F7;
+  color: #1A1A1A;
+  font-family: 'Inter', 'Pretendard', sans-serif;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}

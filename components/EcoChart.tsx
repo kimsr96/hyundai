@@ -47,7 +47,7 @@ export default function EcoChart() {
             width={40}
             domain={[0, 40]}
           />
-          <Tooltip formatter={(v: number | string, name: string) => name.includes("%") ? [`${v}%`, name] : [`${v}천대`, name]} />
+          <Tooltip formatter={(v, name) => (String(name).includes("%") ? [`${v ?? 0}%`, name] : [`${v ?? 0}천대`, name])} />
           <Legend wrapperStyle={{ fontSize: 12 }} />
           <Bar yAxisId="left" dataKey="HEV"  stackId="a" fill={COLORS.HEV}  radius={[0,0,0,0]} />
           <Bar yAxisId="left" dataKey="EV"   stackId="a" fill={COLORS.EV}   radius={[0,0,0,0]} />

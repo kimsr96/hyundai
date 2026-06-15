@@ -54,10 +54,10 @@ export default function RevenueChart() {
             domain={[0, 12]}
           />
           <Tooltip
-            formatter={(value: number | string, name: string) =>
+            formatter={(value, name) =>
               name === "영업이익률"
-                ? [`${Number(value).toFixed(2)}%`, name]
-                : [`${Number(value).toLocaleString()}십억원`, name]
+                ? [`${Number(value ?? 0).toFixed(2)}%`, name]
+                : [`${Number(value ?? 0).toLocaleString()}십억원`, name]
             }
           />
           <Legend wrapperStyle={{ fontSize: 12 }} />

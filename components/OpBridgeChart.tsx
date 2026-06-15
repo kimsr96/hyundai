@@ -57,9 +57,10 @@ export default function OpBridgeChart() {
             domain={[0, 4200]}
           />
           <Tooltip
-            formatter={(value: number, name: string, props: { payload?: { value: number; label: string } }) => {
-              const raw = props?.payload?.value ?? 0;
-              return [`${raw > 0 ? "+" : ""}${raw.toLocaleString()} 십억원`, props?.payload?.label ?? name];
+            formatter={(_value, name, props) => {
+              const raw = (props as { payload?: { value: number; label: string } })?.payload?.value ?? 0;
+              const label = (props as { payload?: { value: number; label: string } })?.payload?.label ?? String(name);
+              return [`${raw > 0 ? "+" : ""}${raw.toLocaleString()} 십억원`, label];
             }}
           />
           {/* invisible base bar */}
@@ -69,7 +70,7 @@ export default function OpBridgeChart() {
             <LabelList
               dataKey="value"
               position="top"
-              formatter={(v: number | string) => (v === 0 ? "" : `${Number(v) > 0 ? "+" : ""}${Number(v).toLocaleString()}`)}
+              formatter={(v) => (Number(v ?? 0) === 0 ? "" : `${Number(v) > 0 ? "+" : ""}${Number(v).toLocaleString()}`)}
               style={{ fontSize: 10, fontWeight: 600 }}
             />
             {wData.map((entry, index) => (

@@ -30,7 +30,7 @@ export default function RegionalSalesChart() {
           <CartesianGrid strokeDasharray="3 3" stroke="#E0E1E3" vertical={false} />
           <XAxis dataKey="region" tick={{ fontSize: 12 }} />
           <YAxis tick={{ fontSize: 11 }} width={36} />
-          <Tooltip formatter={(v: number | string) => [`${v}천대`]} />
+          <Tooltip formatter={(v) => [`${v ?? 0}천대`]} />
           <Legend wrapperStyle={{ fontSize: 12 }} />
           <Bar dataKey="Q1 2025" fill="#A8ACAF" radius={[3, 3, 0, 0]} />
           <Bar dataKey="Q1 2026" fill="#002C5F" radius={[3, 3, 0, 0]} />

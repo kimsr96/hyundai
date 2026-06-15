@@ -42,7 +42,7 @@ export default function SegmentChart() {
           <CartesianGrid strokeDasharray="3 3" stroke="#E0E1E3" />
           <XAxis dataKey="label" tick={{ fontSize: 11 }} />
           <YAxis tick={{ fontSize: 11 }} width={40} />
-          <Tooltip formatter={(v: number | string, name: string) => [`${v}천대`, name]} />
+          <Tooltip formatter={(v, name) => [`${v ?? 0}천대`, name]} />
           <Legend wrapperStyle={{ fontSize: 12 }} />
           <Area type="monotone" dataKey="SUV"  stroke="#002C5F" fill="url(#gSUV)"   strokeWidth={2} />
           <Area type="monotone" dataKey="승용"  stroke="#00438F" fill="url(#gSedan)" strokeWidth={2} />

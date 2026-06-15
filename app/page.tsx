@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import InsightPanel from "@/components/InsightPanel";
 import KpiCard from "@/components/KpiCard";
 import RevenueChart from "@/components/RevenueChart";
 import OpBridgeChart from "@/components/OpBridgeChart";
@@ -19,9 +20,12 @@ export default function DashboardPage() {
 
         {/* ─── KPI 카드 ─── */}
         <section>
-          <p className="text-xs font-semibold text-hyundai-silver uppercase tracking-widest mb-3">
-            핵심 지표 — Q1 2026
-          </p>
+          <div className="flex items-center justify-between mb-3">
+            <p className="text-xs font-semibold text-hyundai-silver uppercase tracking-widest">
+              핵심 지표 — Q1 2026
+            </p>
+            <InsightPanel />
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <KpiCard
               title="매출액"
